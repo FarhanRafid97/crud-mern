@@ -1,0 +1,99 @@
+.labelUsername {
+  position: absolute;
+  left: 6.5rem;
+  top: 3.4rem;
+  padding: 0 0.5rem;
+  color: black;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #ea8823;
+  z-index: -2;
+}
+.username:focus + .labelUsername {
+  top: 2.5rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+
+.username:not(:placeholder-shown).username:not(:focus) + .labelUsername {
+  top: 2.5rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+
+.labelPassword {
+  position: absolute;
+  left: 6.5rem;
+  top: 7.3rem;
+  padding: 0 0.5rem;
+  color: black;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #ea8823;
+  z-index: -2;
+}
+
+.password:focus + .labelPassword {
+  top: 6.4rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+.password:not(:placeholder-shown).password:not(:focus) + .labelPassword {
+  top: 6.4rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+
+.labelEmail {
+  position: absolute;
+  left: 6.5rem;
+  top: 11.1rem;
+  padding: 0 0.5rem;
+  color: black;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #ea8823;
+  z-index: -2;
+}
+
+.email:focus + .labelEmail {
+  top: 10.2rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+.email:not(:placeholder-shown).email:not(:focus) + .labelEmail {
+  top: 10.2rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+
+.labelLevel {
+  position: absolute;
+  left: 6.5rem;
+  top: 14.9rem;
+  padding: 0 0.5rem;
+  color: black;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #ea8823;
+  z-index: -2;
+}
+
+.level:focus + .labelLevel {
+  top: 14rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}
+.level:not(:placeholder-shown).level:not(:focus) + .labelLevel {
+  top: 14rem;
+  font-size: 0.8rem;
+  left: 6.8rem;
+  z-index: 2;
+}

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;400;600&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+body {
+  background-color: #ea8823;
+  scroll-behavior: smooth;
+}
+
+.App {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.container {
+  position: relative;
+  margin-bottom: 65px;
+}
+.navbar {
+  top: 0;
+  position: relative;
+  display: flex;
+  background-color: #ea8823;
+  z-index: 99;
+  width: 100%;
+  padding: 15px 155px;
+  z-index: 9;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin-right: 45px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+}
+
+.link {
+  color: black;
+  font-weight: light;
+  text-decoration: none;
+}
+
+.search input {
+  height: 30px;
+  background-color: #ea8823;
+  border: none;
+  border-bottom: 1px solid black;
+  padding-left: 15px;
+}
+.search input:focus {
+  outline: none;
+}
+
+.search {
+  column-gap: 15px;
+  display: flex;
+  align-items: center;
+}
