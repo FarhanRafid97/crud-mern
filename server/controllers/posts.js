@@ -7,7 +7,7 @@ export const getPost = async (req, res) => {
     res.status(200).json(postBarang);
     // res.send('data ada');
   } catch (error) {
-    res.status(200).json({ message: error.message });
+    res.status(400).json({ message: error.message });
   }
 };
 export const createPost = async (req, res) => {

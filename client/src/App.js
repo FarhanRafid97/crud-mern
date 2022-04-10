@@ -3,6 +3,7 @@ import Form from './components/form/Form';
 import Posts from './components/posts/Posts';
 import { useDispatch } from 'react-redux';
 import { getPost } from './actions/posts';
+import { getDataUsers } from './actions/usersActions';
 import { useEffect, useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
 import './App.css';
@@ -15,6 +16,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getDataUsers());
     dispatch(getPost());
   }, [dispatch]);
 

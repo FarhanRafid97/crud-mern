@@ -15,6 +15,15 @@ const Register = () => {
   const submitUser = (e) => {
     e.preventDefault();
     dispatch(createUser(dataUser));
+    clear();
+  };
+  const clear = () => {
+    setDataUser({
+      username: '',
+      password: '',
+      email: '',
+      level: '',
+    });
   };
 
   useEffect(() => {

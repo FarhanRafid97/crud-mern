@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './detail.css';
@@ -8,13 +8,24 @@ import { useDispatch } from 'react-redux';
 import { deletePost } from '../../actions/posts';
 import { FiShoppingCart } from 'react-icons/fi';
 import { IoBagCheckOutline } from 'react-icons/io';
+import { updateUser } from '../../actions/usersActions';
 
 const Detail = () => {
   const dispatch = useDispatch();
   const posts = useSelector((state) => state.posts);
+  const users = useSelector((state) => state.users);
   const { id } = useParams();
   const filteredPost = posts.filter((post) => post._id === id);
+  const user1 = users[1];
   const recomendedProduk = posts.filter((post) => post._id !== id);
+
+  const keranjangHandler = (e) => {
+    e.preventDefault();
+    const keranjang = user1.keranjang;
+    keranjang.push(filteredPost[0]);
+    console.log(users);
+    dispatch(updateUser(user1._id, users[1]));
+  };
 
   return (
     <>
@@ -66,7 +77,11 @@ const Detail = () => {
                       <FiShoppingCart className="shoping" />
                       BUY NOW
                     </button>
-                    <button className="buttonShoping">
+                    <button
+                      className="buttonShoping"
+                      type="button"
+                      onClick={keranjangHandler}
+                    >
                       <BsBagCheck className="shoping" />
                       CHECKOUT
                     </button>

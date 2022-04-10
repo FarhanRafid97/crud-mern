@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
   password: String,
   email: String,
   level: String,
-  keranjang: [String],
+  keranjang: [Object],
   balance: {
     type: Number,
     dafault: 0,
