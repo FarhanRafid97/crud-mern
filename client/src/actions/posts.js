@@ -32,6 +32,18 @@ export const filterByHarga = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+export const filterByHargaLow = () => async (dispatch) => {
+  try {
+    const { data } = await api.fetctPosts();
+    const hargaTermahal = data.sort(
+      (a, b) => stringToNumber(a.harga) - stringToNumber(b.harga)
+    );
+
+    dispatch({ type: 'FILTERED_PRICE_LOW', payload: hargaTermahal });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);

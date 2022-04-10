@@ -3,7 +3,12 @@ import { useSelector } from 'react-redux';
 import './post.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { filterByHarga, getPost, getPostPopuler } from '../../../actions/posts';
+import {
+  filterByHarga,
+  filterByHargaLow,
+  getPost,
+  getPostPopuler,
+} from '../../../actions/posts';
 import { deletePost } from '../../../actions/posts';
 import { AiFillEdit } from 'react-icons/ai';
 import { clickPost } from '../../../actions/posts';
@@ -11,6 +16,15 @@ import { clickPost } from '../../../actions/posts';
 const Post = () => {
   let post = useSelector((state) => state.posts);
   const dispatch = useDispatch();
+  const handlerHarga = (e) => {
+    if (e.target.value === 'mahal') {
+      dispatch(filterByHarga());
+    } else if (e.target.value === 'murah') {
+      dispatch(filterByHargaLow());
+    } else if (e.target.value === 'populer') {
+      dispatch(getPostPopuler());
+    }
+  };
 
   useEffect(() => {
     dispatch(getPost());
@@ -18,8 +32,15 @@ const Post = () => {
 
   return (
     <>
-      <button onClick={() => dispatch(getPostPopuler())}>POPULER</button>
-      <button onClick={() => dispatch(filterByHarga())}>HARGA</button>
+      <div class="filter">
+        <span>FILTER :</span>
+        <select name="cars" id="cars" onChange={handlerHarga}>
+          <option value="mahal">High To Low</option>
+          <option value="murah">LOW To High</option>
+          <option value="populer">Populer</option>
+        </select>
+      </div>
+
       <div className="listProduk">
         {post.map((item, index) => (
           <div className="card" key={index}>
