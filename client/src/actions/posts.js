@@ -8,6 +8,16 @@ export const getPost = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+export const getPostPopuler = () => async (dispatch) => {
+  try {
+    const { data } = await api.fetctPosts();
+    const populer = data.sort((a, b) => a.click - b.click);
+    dispatch({ type: 'POPULERDATA', payload: populer.reverse() });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);

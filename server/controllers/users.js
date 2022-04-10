@@ -40,6 +40,6 @@ export const updateUser = async (req, res) => {
     { ...user, _id },
     { new: true }
   );
-  console.log(user);
+
   res.json(updateUser);
 };

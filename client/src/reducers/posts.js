@@ -2,6 +2,8 @@ export default (posts = [], action) => {
   switch (action.type) {
     case 'FETCH_ALL':
       return action.payload;
+    case 'POPULERDATA':
+      return action.payload;
     case 'UPDATE':
     case 'CLICK':
       return posts.map((post) =>

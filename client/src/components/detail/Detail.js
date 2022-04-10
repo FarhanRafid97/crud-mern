@@ -21,15 +21,15 @@ const Detail = () => {
 
   const keranjangHandler = (e) => {
     e.preventDefault();
-    const keranjang = user1.keranjang;
+    const keranjang = users[0].keranjang;
     keranjang.push(filteredPost[0]);
     console.log(users);
-    dispatch(updateUser(user1._id, users[1]));
+    dispatch(updateUser(users[0]._id, users[0]));
   };
 
   return (
     <>
-      <div class="halamanProduk">
+      <div className="halamanProduk">
         {filteredPost.map((item, index) => (
           <div className="detail" key={index}>
             <div className="produk">
@@ -72,7 +72,7 @@ const Detail = () => {
                       excepturi magni. Reprehenderit, pariatur. Maxime?
                     </p>
                   </div>
-                  <div class="produkButton">
+                  <div className="produkButton">
                     <button className="buttonShoping">
                       <FiShoppingCart className="shoping" />
                       BUY NOW
