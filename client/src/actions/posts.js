@@ -1,4 +1,6 @@
+import React, { useState } from 'react';
 import * as api from '../api';
+import { stringToNumber } from './function';
 
 export const getPost = () => async (dispatch) => {
   try {
@@ -18,6 +20,18 @@ export const getPostPopuler = () => async (dispatch) => {
   }
 };
 
+export const filterByHarga = () => async (dispatch) => {
+  try {
+    const { data } = await api.fetctPosts();
+    const hargaTermahal = data.sort(
+      (a, b) => stringToNumber(a.harga) - stringToNumber(b.harga)
+    );
+
+    dispatch({ type: 'FILTERHARGA', payload: hargaTermahal.reverse() });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
 export const createPost = (post) => async (dispatch) => {
   try {
     const { data } = await api.createPost(post);

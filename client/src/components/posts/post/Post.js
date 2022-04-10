@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import './post.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getPost, getPostPopuler } from '../../../actions/posts';
+import { filterByHarga, getPost, getPostPopuler } from '../../../actions/posts';
 import { deletePost } from '../../../actions/posts';
 import { AiFillEdit } from 'react-icons/ai';
 import { clickPost } from '../../../actions/posts';
@@ -19,6 +19,7 @@ const Post = () => {
   return (
     <>
       <button onClick={() => dispatch(getPostPopuler())}>POPULER</button>
+      <button onClick={() => dispatch(filterByHarga())}>HARGA</button>
       <div className="listProduk">
         {post.map((item, index) => (
           <div className="card" key={index}>

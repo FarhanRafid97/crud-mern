@@ -4,6 +4,8 @@ export default (posts = [], action) => {
       return action.payload;
     case 'POPULERDATA':
       return action.payload;
+    case 'FILTERHARGA':
+      return action.payload;
     case 'UPDATE':
     case 'CLICK':
       return posts.map((post) =>
