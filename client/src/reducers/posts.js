@@ -1,10 +1,12 @@
 export default (posts = [], action) => {
   switch (action.type) {
     case 'FETCH_ALL':
-      return action.payload;
     case 'POPULERDATA':
-      return action.payload;
     case 'FILTERHARGA':
+    case 'FILTERED_PRICE_LOW':
+      // return action.payload;
+      // return action.payload;
+      // return action.payload;
       return action.payload;
     case 'UPDATE':
     case 'CLICK':
