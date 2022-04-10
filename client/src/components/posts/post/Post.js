@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import './post.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { getPost } from '../../../actions/posts';
 import {
   filterByHarga,
   filterByHargaLow,
-  getPost,
   getPostPopuler,
-} from '../../../actions/posts';
+} from '../../../actions/filterPost';
 import { deletePost } from '../../../actions/posts';
 import { AiFillEdit } from 'react-icons/ai';
 import { clickPost } from '../../../actions/posts';
