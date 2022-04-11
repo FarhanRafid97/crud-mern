@@ -31,7 +31,7 @@ body {
   background-color: #ea8823;
   z-index: 99;
   width: 100%;
-  padding: 15px 155px;
+  padding: 25px 155px;
   z-index: 9;
   justify-content: space-between;
   align-items: center;
@@ -75,4 +75,38 @@ nav ul li {
   column-gap: 15px;
   display: flex;
   align-items: center;
+}
+.loginSection {
+  column-gap: 15px;
+  display: flex;
+}
+.loginSection .registerButton {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+.loginSection .loginButton {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 6px 25px;
+  background-color: white;
+}
+
+.keranjangNavbar {
+  position: relative;
+}
+.shopingchart {
+  font-size: 28px;
+  color: black;
+}
+.jumlahCheckout {
+  border-radius: 50%;
+  color: white;
+  padding: 2px 7px;
+  background-color: #ae2012;
+  position: absolute;
+  top: -10px;
+  right: -10px;
 }

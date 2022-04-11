@@ -28,6 +28,7 @@ const Post = () => {
 
   useEffect(() => {
     dispatch(getPost());
+    console.log(post);
   }, [dispatch]);
 
   return (

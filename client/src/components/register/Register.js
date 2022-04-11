@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './register.css';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../../actions/usersActions';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [dataUser, setDataUser] = useState({
@@ -87,6 +88,9 @@ const Register = () => {
             <button className="clear" type="button">
               Clear
             </button>
+            <Link to="/login" className="registerButton">
+              Login
+            </Link>
           </div>
         </form>
       </div>
